@@ -1,21 +1,79 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 
 Canvas {
+  display: block;
+  position: fixed;
   height: 100vh;
+  width: 100vw;
+  justify-content: space-around;
+  padding: 0;
+  flex-wrap: wrap;
+  margin: 0;
+  align-content: center;
+  text-align: center;
   background: radial-gradient(#e66465, #9198e5);
-  z-index: 1;
+  z-index: -1;
 }
 .App {
   width: 100vw;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+  background-color: black;
+  overflow-y: auto;
 }
 h1 {
+  color: white;
+  font-family: "Amatic SC", cursive;
+  font-size: 50px;
+  width: fit-content;
+  margin: auto;
+}
+.intro {
+  text-align: center;
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-all;
+  padding: 10px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2em;
+}
+
+p {
+  padding: 10px;
+  margin: auto;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.imgDiv {
+  align-content: center;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2rem;
+  width: 70vw;
+  top: 70%;
+  left: 15%;
+  z-index: 2;
+}
+.imgDiv p {
   color: white;
-  font-family: "Amatic SC", cursive;
-  font-size: 50px;
-  width: fit-content;
+  position: relative;
+  top: 10px;
+  left: 50%;
+  transform: translate(-15%);
+}
+img {
+  width: 50%;
+  border-radius: 2em;
+  margin: 20px;
+}
+img:hover {
+  opacity: 0.5;
 }

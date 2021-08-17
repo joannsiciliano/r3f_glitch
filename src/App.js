@@ -4,6 +4,7 @@ import { OrbitControls, useGLTF, Effects } from "@react-three/drei";
 import { BloomPass } from "three/examples/jsm/postprocessing/BloomPass";
 import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
 import { Suspense } from "react";
+import c4d from "./c4d.jpg";
 import "./App.css";
 
 extend({ BloomPass, GlitchPass });
@@ -22,7 +23,18 @@ const Tori = () => {
 export default function App() {
   return (
     <div className="App">
-      <h1>:)</h1>
+      <div className="intro">
+        <h1>Hello this is an H1</h1>
+        <p>
+          lorem mf ipsum
+          sdfjasdklfjasdfljasdlfjsladjfsdkljfsdjsadlfjasdfkljasdjklsdfjkasdfjsdfjksdfjksdfjksdlfjsdflkjsdlfkjasdlkfjasdlkfsal;dfsaldkfaslkdj
+        </p>
+        <p>wow so cool responsive design!</p>
+      </div>
+      <div className="imgDiv">
+        <p>this is an image div :)</p>
+        <img src={c4d} alt="render" title="image made in cinema4D" />
+      </div>
       <Canvas>
         <Effects>
           <bloomPass attachArray="passes" />
