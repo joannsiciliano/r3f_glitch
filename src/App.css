@@ -82,11 +82,26 @@ nav {
   font-family: "Amatic SC", cursive;
   font-size: 2rem;
   margin: auto;
-  height: 8vh;
-  width: 110vh;
+  /* height: 8vh; */
+  width: 160vh;
   color: white;
   padding-top: 10px;
   position: sticky;
   z-index: 3;
   top: 0px;
+  overflow: hidden;
+}
+nav li {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+nav li:hover {
+  color: red;
+  cursor: pointer;
 }

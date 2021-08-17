@@ -23,7 +23,11 @@ const Tori = () => {
 export default function App() {
   return (
     <div className="App">
-      <nav>Home</nav>
+      <nav>
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+      </nav>
       <div className="intro">
         <h1>Hello this is an H1</h1>
         <p>
