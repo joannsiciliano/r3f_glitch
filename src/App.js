@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from "react";
+import { Canvas, extend } from "@react-three/fiber";
+import { OrbitControls, useGLTF, Effects } from "@react-three/drei";
+import { BloomPass } from "three/examples/jsm/postprocessing/BloomPass";
+import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
+import { Suspense } from "react";
+import "./App.css";
 
-function App() {
+extend({ BloomPass, GlitchPass });
+const Tori = () => {
+  const { nodes } = useGLTF("tori2.gltf");
+
+  return (
+    <group rotation={[Math.PI / 8, Math.PI * 1.2, 0]}>
+      <mesh geometry={nodes.Torus001.geometry}>
+        <meshStandardMaterial color="white" />
+      </mesh>
+    </group>
+  );
+};
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>:)</h1>
+      <Canvas>
+        <Effects>
+          <bloomPass attachArray="passes" />
+          <glitchPass attachArray="passes" />
+        </Effects>
+        <fog attach="fog" args={["red", 1, 50]} />
+        <OrbitControls maxPolarAngle={Math.PI / 2} minPolarAngle={0} />
+        <directionalLight intensity={0.5} color="blue" />
+        <ambientLight intensity={0.2} color="red" />
+        <Suspense fallback={null}>
+          <Tori />
+        </Suspense>
+      </Canvas>
     </div>
   );
 }
-
-export default App;
